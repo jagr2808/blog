@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>The Geometry of Polynomial Rings | Jacob&#39;s blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.74.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="The Geometry of Polynomial Rings" />
+<meta property="og:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \)
+Inspired by Ravi Vakil&rsquo;s summer project about algebraic geometry I wanted to make this blog post about the spectrum of polynomial rings and how to conceptualize them geometrically when your field isn&rsquo;t algebraically closed.
+The spectrum of a ring $R$, denoted $\Spec R$, is the set of all prime ideals of $R$ (with some additional structure). We think of a $\Spec R$ as a geometric space where the points are the maximal ideals, and the prime ideals contained in a maximal ideal represent geometric objects containing the point." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jagr2808.github.io/posts/geometry-of-polynomial-rings/" />
+<meta property="article:published_time" content="2020-07-14T10:19:23+02:00" />
+<meta property="article:modified_time" content="2020-07-14T10:19:23+02:00" />
+<meta itemprop="name" content="The Geometry of Polynomial Rings">
+<meta itemprop="description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \)
+Inspired by Ravi Vakil&rsquo;s summer project about algebraic geometry I wanted to make this blog post about the spectrum of polynomial rings and how to conceptualize them geometrically when your field isn&rsquo;t algebraically closed.
+The spectrum of a ring $R$, denoted $\Spec R$, is the set of all prime ideals of $R$ (with some additional structure). We think of a $\Spec R$ as a geometric space where the points are the maximal ideals, and the prime ideals contained in a maximal ideal represent geometric objects containing the point.">
+<meta itemprop="datePublished" content="2020-07-14T10:19:23+02:00" />
+<meta itemprop="dateModified" content="2020-07-14T10:19:23+02:00" />
+<meta itemprop="wordCount" content="1177">
+
+
+
+<meta itemprop="keywords" content="Algerbaic Geometry,Polynomial rings," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Geometry of Polynomial Rings"/>
+<meta name="twitter:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \)
+Inspired by Ravi Vakil&rsquo;s summer project about algebraic geometry I wanted to make this blog post about the spectrum of polynomial rings and how to conceptualize them geometrically when your field isn&rsquo;t algebraically closed.
+The spectrum of a ring $R$, denoted $\Spec R$, is the set of all prime ideals of $R$ (with some additional structure). We think of a $\Spec R$ as a geometric space where the points are the maximal ideals, and the prime ideals contained in a maximal ideal represent geometric objects containing the point."/>
+
+	<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Jacob&#39;s blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jagr2808.github.io/posts/geometry-of-polynomial-rings/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jagr2808.github.io/posts/geometry-of-polynomial-rings/&amp;text=The%20Geometry%20of%20Polynomial%20Rings" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jagr2808.github.io/posts/geometry-of-polynomial-rings/&amp;title=The%20Geometry%20of%20Polynomial%20Rings" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">The Geometry of Polynomial Rings</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-07-14T10:19:23+02:00">July 14, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><code>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \)</code></p>
+<p>Inspired by Ravi Vakil&rsquo;s summer project about algebraic geometry I wanted to make this blog post about the spectrum of polynomial rings and how to conceptualize them geometrically when your field isn&rsquo;t algebraically closed.</p>
+<p>The spectrum of a ring <code>$R$</code>, denoted <code>$\Spec R$</code>, is the set of all prime ideals of <code>$R$</code> (with some additional structure). We think of a <code>$\Spec R$</code> as a geometric space where the points are the maximal ideals, and the prime ideals contained in a maximal ideal represent geometric objects containing the point.</p>
+<p>As an example, think of <code>$\Spec \C[x, y]$</code>: the maximal ideals are of the form <code>$(x-a, y-b)$</code>, and we can think of this as a point <code>$(a,b) \in \C^2$</code>. The other prime ideals of <code>$\Spec \C[x, y]$</code> are the irreducible polynomials, and <code>$(0)$</code>. We can think of the irreducible polynomials as &ldquo;curves&rdquo; in <code>$\C^2$</code>, for example we think of <code>$(y - x^2)$</code> as the curve where <code>$y=x^2$</code>. You can verify that <code>$(x-a, y-b)$</code> contains <code>$(y - x^2)$</code> if and only if <code>$b=a^2$</code>, so this matches our intuition for the geometry of <code>$\C^2$</code>. Lastly since every ideal contains <code>$(0)$</code> it represents the entire plane.</p>
+<p>In general when <code>$k$</code> is an algebraically closed field the points of <code>$\Spec k[x_1, \cdots, x_n]$</code> are exactly the points of <code>$k^n$</code>. Let&rsquo;s warm up by proving this fact.</p>
+<h1 id="hilberts-weak-nullstellensatz">Hilbert&rsquo;s weak nullstellensatz</h1>
+<p>Noether&rsquo;s normalization lemma states that if <code>$A$</code> is a finitely generated commutative <code>$k$</code>-algebra, then there is a finitely generated subalgebra <code>$B \subseteq A$</code> such that <code>$A$</code> is a finite <code>$B$</code>-module, and <code>$B$</code> is a free commutative <code>$k$</code>-algebra. In other words <code>$B$</code> is isomorphic to a polynomial ring in a finite amount of variables. I will assume this as known, but a proof is available at for example <a href="https://en.wikipedia.org/wiki/Noether_normalization_lemma">Wikipedia</a>.</p>
+<p>We can use Noether&rsquo;s normalization lemma to understand the maximal ideals of <code>$A := k[x_1, \cdots, x_n]$</code>. Say <code>$\mathfrak{m}$</code> is a maximal ideal of <code>$A$</code>. Then <code>$A/\mathfrak{m}$</code> is a finitely generated <code>$k$</code>-algebra which is also a field. Applying Noether normalization we see that <code>$A/\mathfrak{m}$</code> has a free subalgebra <code>$B$</code>. Let <code>$B_{(0)}$</code> be the field of fractions of <code>$B$</code> contained in <code>$A/\mathfrak{m}$</code>. Since finitely generated algebras over <code>$k$</code> are Noetherian and <code>$A/\mathfrak{m}$</code> is a finitely generated <code>$B$</code>-module, it follows that <code>$B_{(0)}$</code> is a finitely generated <code>$B$</code>-module. This must imply that <code>$B=k$</code>, because for all other free <code>$k$</code>-algebras there field of fractions are infinitely generated. In conclusion <code>$A/\mathfrak{m}$</code> must be a finite field extension of <code>$k$</code>.</p>
+<p>If we further assume that <code>$k$</code> is algebraically closed the only finite extension of <code>$k$</code> is <code>$k$</code> itself, so <code>$\mathfrak{m}$</code> is the kernel of a <code>$k$</code>-algebra homomorphism <code>$\varphi: A \to k$</code>. Then it is clear that <code>$\mathfrak{m} = \big(x_1 - \varphi(x_1), \cdots, x_n - \varphi(x_n)\big)$</code>. This allows us to associate the maximal ideals of <code>$A$</code> with points in <code>$k^n$</code>.</p>
+<h1 id="galois-orbits">Galois orbits</h1>
+<p>We turn our attention to what happens when <code>$k$</code> is not algebraically closed. <code>$A/\mathfrak{m}$</code> is still a finite extension of <code>$k$</code>, and since finite extensions are algebraic it embeds into <code>$K$</code>, the algebraic closure of <code>$k$</code>. In other words <code>$\mathfrak{m}$</code> is the kernel of a <code>$k$</code>-algebra homomorphism <code>$A \to K$</code>. So it seems like we can associate the maximal ideals with points in <code>$K^n$</code>, but unlike when <code>$k$</code> was algebraically closed there can be several homomorphisms with the same kernel, so this association is not unique. For example if we post-compose with any <code>$k$</code>-algebra automorphism of <code>$K$</code> we would get a different homomorphism with the same kernel. In fact we will see that this is the only thing you can do.</p>
+<p><strong>Theorem</strong>: If <code>$\varphi, \psi : A \to K$</code> are <code>$k$</code>-algebra homomorphisms from a polynomial algebra to the algebraic closure of <code>$k$</code> with the same kernel then there is a <code>$k$</code>-algebra automorphism of <code>$\alpha: K \to K$</code> such that <code>$\varphi = \alpha \psi$</code>.</p>
+<p><em>proof</em>: Let <code>$E$</code> be the image of <code>$\psi$</code> and <code>$E'$</code> the image of <code>$\varphi$</code>. Since they are both isomorphic to <code>$A/\text{ker}\varphi$</code> there is an isomorphism <code>$E \to E'$</code>. Let <code>$\tilde{\alpha}$</code> be the composition <code>$E \to E' \hookrightarrow K$</code> of the isomorphism with the inclusion of <code>$E'$</code>. Then I claim <code>$\tilde{\alpha}$</code> extends to a <code>$k$</code>-algebra automorphism of <code>$K$</code>. The proof uses Zorn&rsquo;s lemma.</p>
+<p>Let <code>$P := \left\lbrace (F, \gamma) \mid E \subseteq F,\; \gamma:F \to K,\; \gamma|_E = \tilde{\alpha} \right\rbrace$</code> be the set of extensions of <code>$\tilde{\alpha}$</code> to field extensions of <code>$E$</code>. Define a partial order on <code>$P$</code> by <code>$(F, \gamma) \leq (F', \gamma')$</code> if <code>$F \subseteq F'$</code> and <code>$\gamma'|_F = \gamma$</code>. <code>$P$</code> is clearly non-empty since it contains <code>$E$</code>, further if <code>$\big((F_i, \gamma_i)\big)_{i\in I}$</code> is a chain in <code>$P$</code> then <code>$(F, \gamma)$</code> is an upper bound with <code>$F = \bigcup\limits_{i\in I} F_i$</code> and <code>$\gamma(x) = \gamma_i(x)$</code> whenever <code>$x$</code> is in <code>$F_i$</code>. Now applying Zorn&rsquo;s lemma we get that <code>$P$</code> has a maximal element <code>$(F, \alpha)$</code>. I claim that <code>$F = K$</code> and that <code>$\alpha$</code> is an automorphism.</p>
+<p>Let <code>$a$</code> be any element of <code>$K$</code>. Since <code>$F \subseteq K$</code> is an algebraic extension <code>$a$</code> has a minimal polynomial <code>$p(x)$</code> with coefficients in <code>$F$</code>. We have that <code>$F(a) \simeq F[x]/(p(x))$</code>. Let <code>$F'$</code> denote the image of <code>$\alpha$</code>. Since <code>$\alpha$</code> is a homomorphism of fields it is an isomorphism onto its image and thus induces an isomorphism of rings <code>$\hat{\alpha}:F[x] \to F'[x]$</code>. Let <code>$a'$</code> be a root of <code>$\hat{\alpha}(p(x))$</code>, then <code>$F'(a') \simeq F'[x]/\hat{\alpha}(p(x)) \simeq F[x]/(p(x)) \simeq F(a)$</code>. Thus we can extend <code>$\alpha$</code> to <code>$F(a)$</code> by mapping <code>$a$</code> to <code>$a'$</code>. Since <code>$(F, \alpha)$</code> is maximal this implies that <code>$F=K$</code>. And since <code>$F'\simeq F = K$</code> is algebraically closed and <code>$K$</code> doesn&rsquo;t have any proper algebraic subfields <code>$\alpha$</code> is surjective. Therefor <code>$\alpha$</code> is an automorphism such that <code>$\varphi = \alpha \psi$</code>. □</p>
+<p>So what does this mean? If we let <code>$G$</code> be the group of <code>$k$</code>-algebra automorphisms of <code>$K = \bar{k}$</code>, and we let <code>$G$</code> act diagonally on <code>$K^n$</code>. Then the maximal ideals of <code>$k[x_1, \cdots, x_n]$</code> are in bijection with the orbits of <code>$K^n$</code>. These orbits are called Galois orbits (even though there is no assumption that the extension <code>$k \to K$</code> is Galois).</p>
+<h1 id="geometric-pictures">Geometric pictures</h1>
+<p>Let&rsquo;s use this knowledge to understand <code>$\Spec \mathbb{R}[x]$</code>. The real automorphisms of <code>$\C$</code> are the identity and complex conjugation, so <code>$\Spec \mathbb{R}[x]$</code> looks like <code>$\C$</code> modulo conjugation. It&rsquo;s the complex plane and fold it along <code>$\mathbb{R}$</code>, leaving us with the upper half plane <code>$\C^\geq$</code>.</p>
+<p><img src="/polynomial-rings/specR%5Bx%5D.png" alt="The geometry of R[x]"></p>
+<p>If we add more variables and look at for example <code>$\Spec \mathbb{R}[x, y]$</code> we get <code>$\C^&gt; \times \C \cup \mathbb{R} \times \C^\geq$</code>, where <code>$\C^&gt;$</code> is the strict upper half plane (i.e. not including <code>$\mathbb{R}$</code>). Since I have not yet learned to draw in four dimensions I leave you with this illustration of the imaginary component.</p>
+<p><img src="/polynomial-rings/specR%5Bx,y%5D.png" alt="The geometry of R[x, y]"></p>
+<p>The maximal ideal corresponding to a point <code>$(z=a+bi, w=c+di) \in \C^&gt; \times \C$</code> is <code>$\big((x-z)(x-\bar{z}), (xd - yb - (ad-bc))\big)$</code>, while the maximal ideal corresponding to <code>$(r, w) \in \mathbb{R} \times \C^\geq$</code> is <code>$\big((x-r), (y-w)\big)$</code> if <code>$w$</code> is real and <code>$\big((x-r), (y-w)(y-\bar{w})\big)$</code> if it is not. So the maximal ideals of <code>$\mathbb{R}[x, y]$</code> are those generated by an irreducible polynomial in one of the variables and a linear polynomial in both/the other variable.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/algerbaic-geometry" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Algerbaic Geometry</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/polynomial-rings" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Polynomial rings</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jagr2808.github.io" >
+    &copy;  Jacob's blog 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

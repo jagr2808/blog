@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Kan extensions | Jacob&#39;s blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.74.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Kan extensions" />
+<meta property="og:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jagr2808.github.io/posts/kan-extensions/" />
+<meta property="article:published_time" content="2020-05-30T21:09:44+02:00" />
+<meta property="article:modified_time" content="2020-05-30T21:09:44+02:00" />
+<meta itemprop="name" content="Kan extensions">
+<meta itemprop="description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram.">
+<meta itemprop="datePublished" content="2020-05-30T21:09:44+02:00" />
+<meta itemprop="dateModified" content="2020-05-30T21:09:44+02:00" />
+<meta itemprop="wordCount" content="1057">
+
+
+
+<meta itemprop="keywords" content="(co)limit,Category theory,Kan extensions," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kan extensions"/>
+<meta name="twitter:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram."/>
+
+	<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Jacob&#39;s blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jagr2808.github.io/posts/kan-extensions/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jagr2808.github.io/posts/kan-extensions/&amp;text=Kan%20extensions" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jagr2808.github.io/posts/kan-extensions/&amp;title=Kan%20extensions" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Kan extensions</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-30T21:09:44+02:00">May 30, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><code>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)</code></p>
+<p>Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram. The word &ldquo;extension&rdquo; in Kan extension comes from what happens if the diagram we use to capture the information is bigger than the original diagram; we are extending the diagram. I will try to make this very loose explanation more rigorous in this post, so let&rsquo;s begin.</p>
+<p><strong>Definition (diagram)</strong>: If <code>$A$</code> is a small category and <code>$\mathcal{C}$</code> is a (not necessarily small) category, then a diagram in <code>$\mathcal{C}$</code> in the shape of <code>$A$</code> is a functor `$X: A \to \mathcal{C}$.</p>
+<p>For example if <code>$A = 2$</code> is the discrete category with two objects then a diagram of shape <code>$A$</code> is just a pair of objects in <code>$\mathcal{C}$</code>. Or if <code>$A = A_L \leftarrow A_0 \rightarrow A_R$</code> an <code>$A$</code>-shaped diagram is three objects in <code>$\mathcal{C}$</code> together with two morphisms between the appropriate objects.</p>
+<p>Both the (co)limit and a Kan extension are universal constructions. A universal construction is done by looking at all the &ldquo;candidates&rdquo; that encapsulates the information we wish to capture. Then the universal construction is the candidate that can capture the information of all the other candidates. Let&rsquo;s have a quick refresher of what this candidate is in the (co)limit case.</p>
+<p><strong>Definition ((co)cone)</strong>: For an object <code>$C \in \mathcal{C}$</code> we have a functor <code>$\Delta(C): A \to \mathcal{C}$</code> that maps every object of <code>$A$</code> to <code>$C$</code> and every morphism of <code>$A$</code> to <code>$1_C$</code> the identity morphism on <code>$C$</code>. A cone of a diagram <code>$X:A \to \mathcal{C}$</code> is a natural transformation <code>$\eta : \Delta(C) \Rightarrow X$</code>. Similarly a cocone is a natural transformation <code>$\varepsilon: X \Rightarrow \Delta(C)$</code>.</p>
+<p>The (co)cone is so named because of how it looks when you draw it</p>
+<p><img src="/kan/cone.png" alt="A cone of X"></p>
+<p>So the limit is the cone that capture the information of all other cones. More specifically for every cone <code>$\eta: \Delta(C) \to X$</code> there is a unique morphism <code>$C \to \lim X$</code>, and vice versa. So the cones of <code>$X$</code> are in correspondence with the morphisms to <code>$\lim X$</code>. It is in this way that the limit encapsulates all other cones. Similarly the cocones are in correspondence with all the morphisms from the colimit`.</p>
+<p>Like I said before a Kan extension is really the same idea, but instead of looking at a single object we look at another diagram. How would we do this you might ask? The thing to realize is that a single object IS another diagram, just in a very specific shape. It is in the shape of 1, the discrete category with one object. A functor from 1 just picks out a single object and a natural transformation between to such diagrams is just a morphism between their objects. Further the functor <code>$\Delta: \mathcal{C} \to \mathcal{C}^A$</code> is really just precomposition with the unique functor <code>$\pi_A: A \to 1$</code>. So a cone is really a functor <code>$C:1 \to \mathcal{C}$</code> together with a natural transformation <code>$\eta: \pi_A^* C \Rightarrow X$</code>.</p>
+<p><img src="/kan/cone-as-kan.png" alt="A cone as a natural transformation"></p>
+<p>with this picture in mind we can define Kan extensions.</p>
+<p><strong>Definition (Kan extension)</strong>: Let <code>$A$</code> and <code>$B$</code> be small categories, <code>$\mathcal{C}$</code> a category, <code>$u: A \to B$</code> a functor, and <code>$X:A \to \mathcal{C}$</code> a diagram. The Right Kan extension of <code>$X$</code> along <code>$u$</code> is a functor <code>$RKan_u(X) : B \to \mathcal{C}$</code> together with a natural transformation <code>$\alpha: RKan_u(X) \circ u \Rightarrow X$</code>, such that for any other functor <code>$Y: B \to \mathcal{C}$</code> and natural transformation <code>$\eta: Y \circ u \Rightarrow X$</code> there is a unique natural transformation <code>$\hat{\eta} : Y \Rightarrow RKan_u(X)$</code> such that <code>$\alpha \cdot \hat{\eta} \circ u = \eta$</code>.</p>
+<p><img src="/kan/kan-extension.png" alt="Kan extension"></p>
+<p>Another way to say this is that we have a natural isomorphism <code>$\Hom_{\mathcal{C}^B}(Y, RKan_u(X)) \cong \Hom_{\mathcal{C}^A}(u^*Y, X)$</code>, i.e. <code>$(u^*, RKan)$</code> is an adjoint pair. Dually the Left Kan extension is defined as the left adjoint of the precomposition functor <code>$u^*$</code>.</p>
+<p>Lastly let&rsquo;s look at an example. We can think of a group as a category with one object. That is if <code>$G$</code> is a group we make a category with one object <code>$*$</code>, and morphisms <code>$\Hom(*,*) = G$</code> such that composition is the group operation of <code>$G$</code>. Then a functor <code>$\varphi: H \to G$</code> corresponds exactly to a group map between the groups, a functor <code>$\rho: G \to \mathcal{C}$</code> is exactly a <code>$G$</code> action on an object of <code>$\mathcal{C}$</code>, and a natural transformation between such functors corresponds exactly to a <code>$G$</code>-linear map between <code>$G$</code>-objects.</p>
+<p>Example: Let <code>$G$</code> be a group (realized as a category), <code>$H$</code> a subgroup of <code>$G$</code>, <code>$\iota : H \to G$</code> the inclusion functor and <code>$X: H \to Ab$</code> an <code>$H$</code>-module. Then the Left Kan extension of <code>$X$</code> along <code>$\iota$</code> is the induced module <code>$\mathbb{Z}G \otimes_{\mathbb{Z}H} X$</code>, and the Right Kan extension is the coinduced module <code>$\Hom_{\mathbb{Z}H}(\mathbb{Z}G, X)$</code>. The natural transformations are given by <code>$x \mapsto 1 \otimes x$</code> and <code>$f \mapsto f(1)$</code> respectively.</p>
+<p>proof. I will prove that the coinduced module is the Right Kan extension, the proof for the induced module is similar. The first thing we should check is that <code>$\alpha = \left(f \mapsto f(1)\right)$</code> actually is a natural transformation, i.e. we must check that it is <code>$H$</code>-linear. The action on <code>$\Hom_{\mathbb{Z}H}(\mathbb{Z}G, X)$</code> is given by <code>$(gf)(s) = f(sg)$</code>, so <code>$\alpha(hf) f(1\cdot h) = f(h)$</code>. Since <code>$f$</code> is <code>$H$</code>-linear we have that <code>$f(h) = hf(1) = h\alpha(f)$</code> and so <code>$\alpha$</code> is natural.</p>
+<p>Now assume <code>$Y$</code> is some other <code>$G$</code>-module and <code>$\eta: \iota^*Y \to X$</code> is an <code>$H$</code>-linear map. Then we need to show that there is a unique <code>$G$</code>-linear map <code>$\hat{\eta}: Y \to \Hom_{\mathbb{Z}H}(\mathbb{Z}G, X)$</code> such that <code>$\alpha \cdot \hat{\eta} \circ \iota = \eta$</code>. For ease of notation let us write <code>$f_y$</code> for <code>$\hat{\eta}(y)$</code>. Then if we want <code>$\eta$</code> to factor through <code>$\hat{\eta}$</code> we need <code>$f_y(1) = \eta(y)$</code>. If <code>$\hat{\eta}$</code> is to be <code>$G$</code>-linear we need <code>$f_{gy}=gf_y$</code>, but then <code>$f_y(g) = (gf_y)(1) = f_{gy}(1) = \eta(gy)$</code>. This shows that <code>$\hat{\eta}$</code> is unique. The only thing that needs to be checked then for <code>$\hat{\eta}$</code> to be well defined is that <code>$f_y$</code> is <code>$H$</code>-linear. I leave this to you.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/colimit" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">(co)limit</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/category-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Category theory</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/kan-extensions" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Kan extensions</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jagr2808.github.io" >
+    &copy;  Jacob's blog 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

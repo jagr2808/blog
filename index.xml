@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jacob.s math blog</title>
-    <link>http://jagr2808.github.io/</link>
-    <description>Recent content on Jacob.s math blog</description>
+    <title>Jacob&#39;s math blog on Jacob&#39;s blog</title>
+    <link>https://jagr2808.github.io/</link>
+    <description>Recent content in Jacob&#39;s math blog on Jacob&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2020 21:27:30 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2020 11:08:13 +0200</lastBuildDate>
     
-	<atom:link href="http://jagr2808.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jagr2808.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My Second Post</title>
-      <link>http://jagr2808.github.io/posts/my-second-post/</link>
-      <pubDate>Wed, 02 Sep 2020 21:27:30 +0200</pubDate>
+      <title>Cogroups and Groups of Schemes</title>
+      <link>https://jagr2808.github.io/posts/cogroups/</link>
+      <pubDate>Sat, 01 Aug 2020 11:08:13 +0200</pubDate>
       
-      <guid>http://jagr2808.github.io/posts/my-second-post/</guid>
-      <description>This is text!
-MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });  MathJax.Hub.Queue(function() { // Fix  tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown. Discussion at // https://github.com/mojombo/jekyll/issues/199 var all = MathJax.Hub.getAllJax(), i; for(i = 0; i \( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \) Here $\times$ is the categorical product and $1$ is the terminal object, so we have to assume or category has these.</description>
+      <guid>https://jagr2808.github.io/posts/cogroups/</guid>
+      <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Introduction I was watching Richard E. Borchards lecture series on schemes where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&amp;rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out.</description>
+    </item>
+    
+    <item>
+      <title>The Geometry of Polynomial Rings</title>
+      <link>https://jagr2808.github.io/posts/geometry-of-polynomial-rings/</link>
+      <pubDate>Tue, 14 Jul 2020 10:19:23 +0200</pubDate>
+      
+      <guid>https://jagr2808.github.io/posts/geometry-of-polynomial-rings/</guid>
+      <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \)
+Inspired by Ravi Vakil&amp;rsquo;s summer project about algebraic geometry I wanted to make this blog post about the spectrum of polynomial rings and how to conceptualize them geometrically when your field isn&amp;rsquo;t algebraically closed.
+The spectrum of a ring $R$, denoted $\Spec R$, is the set of all prime ideals of $R$ (with some additional structure). We think of a $\Spec R$ as a geometric space where the points are the maximal ideals, and the prime ideals contained in a maximal ideal represent geometric objects containing the point.</description>
+    </item>
+    
+    <item>
+      <title>Kan extensions</title>
+      <link>https://jagr2808.github.io/posts/kan-extensions/</link>
+      <pubDate>Sat, 30 May 2020 21:09:44 +0200</pubDate>
+      
+      <guid>https://jagr2808.github.io/posts/kan-extensions/</guid>
+      <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram.</description>
     </item>
     
   </channel>

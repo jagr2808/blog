@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cogroups on Jacob&#39;s blog</title>
+    <link>https://jagr2808.github.io/tags/cogroups/</link>
+    <description>Recent content in cogroups on Jacob&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Aug 2020 11:08:13 +0200</lastBuildDate>
+    
+	<atom:link href="https://jagr2808.github.io/tags/cogroups/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cogroups and Groups of Schemes</title>
+      <link>https://jagr2808.github.io/posts/cogroups/</link>
+      <pubDate>Sat, 01 Aug 2020 11:08:13 +0200</pubDate>
+      
+      <guid>https://jagr2808.github.io/posts/cogroups/</guid>
+      <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Introduction I was watching Richard E. Borchards lecture series on schemes where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&amp;rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out.</description>
+    </item>
+    
+  </channel>
+</rss>

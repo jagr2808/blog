@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Jacob&#39;s blog</title>
-    <link>https://jagr2808.github.io/posts/</link>
-    <description>Recent content in Posts on Jacob&#39;s blog</description>
+    <title>Category theory on Jacob&#39;s blog</title>
+    <link>https://jagr2808.github.io/tags/category-theory/</link>
+    <description>Recent content in Category theory on Jacob&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Aug 2020 11:08:13 +0200</lastBuildDate>
     
-	<atom:link href="https://jagr2808.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jagr2808.github.io/tags/category-theory/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>https://jagr2808.github.io/posts/cogroups/</guid>
       <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
 Introduction I was watching Richard E. Borchards lecture series on schemes where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&amp;rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out.</description>
-    </item>
-    
-    <item>
-      <title>The Geometry of Polynomial Rings</title>
-      <link>https://jagr2808.github.io/posts/geometry-of-polynomial-rings/</link>
-      <pubDate>Tue, 14 Jul 2020 10:19:23 +0200</pubDate>
-      
-      <guid>https://jagr2808.github.io/posts/geometry-of-polynomial-rings/</guid>
-      <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \)
-Inspired by Ravi Vakil&amp;rsquo;s summer project about algebraic geometry I wanted to make this blog post about the spectrum of polynomial rings and how to conceptualize them geometrically when your field isn&amp;rsquo;t algebraically closed.
-The spectrum of a ring $R$, denoted $\Spec R$, is the set of all prime ideals of $R$ (with some additional structure). We think of a $\Spec R$ as a geometric space where the points are the maximal ideals, and the prime ideals contained in a maximal ideal represent geometric objects containing the point.</description>
     </item>
     
     <item>

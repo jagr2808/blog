@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Cogroups and Groups of Schemes | Jacob&#39;s blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.74.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Cogroups and Groups of Schemes" />
+<meta property="og:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Introduction I was watching Richard E. Borchards lecture series on schemes where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jagr2808.github.io/posts/cogroups/" />
+<meta property="article:published_time" content="2020-08-01T11:08:13+02:00" />
+<meta property="article:modified_time" content="2020-08-01T11:08:13+02:00" />
+<meta itemprop="name" content="Cogroups and Groups of Schemes">
+<meta itemprop="description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Introduction I was watching Richard E. Borchards lecture series on schemes where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out.">
+<meta itemprop="datePublished" content="2020-08-01T11:08:13+02:00" />
+<meta itemprop="dateModified" content="2020-08-01T11:08:13+02:00" />
+<meta itemprop="wordCount" content="1101">
+
+
+
+<meta itemprop="keywords" content="Algerbaic Geometry,Category theory,cogroups," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cogroups and Groups of Schemes"/>
+<meta name="twitter:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Introduction I was watching Richard E. Borchards lecture series on schemes where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out."/>
+
+	<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Jacob&#39;s blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jagr2808.github.io/posts/cogroups/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jagr2808.github.io/posts/cogroups/&amp;text=Cogroups%20and%20Groups%20of%20Schemes" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jagr2808.github.io/posts/cogroups/&amp;title=Cogroups%20and%20Groups%20of%20Schemes" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Cogroups and Groups of Schemes</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-08-01T11:08:13+02:00">August 1, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><code>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)</code></p>
+<h1 id="introduction">Introduction</h1>
+<p>I was watching Richard E. Borchards <a href="https://www.youtube.com/playlist?list=PL8yHsr3EFj50Un2NpfPySgXctRQK7CLG-">lecture series on schemes</a> where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out.</p>
+<p>Let&rsquo;s start at the beginning: a group in a category can be defined as an object <code>$G$</code> together with maps <code>$\mu: G \times G \to G$</code>, <code>$-1:G \to G$</code> and <code>$e:1 \to G$</code> making the following diagrams commute.</p>
+<p><img src="/cogroups/group-axioms.png" alt="Diagram of group axioms"></p>
+<p>Here <code>$\times$</code> is the categorical product and <code>$1$</code> is the terminal object, so we have to assume or category has these. The diagrams describe the associativity, inverse and identity axioms respectively. You can check that if we apply this to the category of sets we get the standard definition of a group. If we take the duals of these diagrams, inverting the arrows, replacing <code>$\times$</code> by coproduct and <code>$1$</code> by the initial object we get the cogroup axioms.</p>
+<p>Okay, so this is fun and all, but why care about cogroups? Well one reason might be the contravariant Yoneda embedding! Hang with me here. Let <code>$G$</code> be a cogroup in a category <code>$\mathcal{C}$</code>. If our Hom-functors preserve products and terminal objects (like they do in most the categories we know) then the Yoneda embedding makes <code>$\Hom(G, -)$</code> into a group in the functor category <code>$[\mathcal{C}, \mathbf{Set}]$</code>. This means that for any object <code>$X \in \mathcal{C}$</code> we have that <code>$\Hom(G, X)$</code> is a group in <code>$\mathbf{Set}$</code>. Further <code>$\Hom(G, -)$</code> lifts to a functor to the category of groups of sets, also known as <code>$\mathbf{Grp}$</code> the category of groups.</p>
+<p>So cogroups give rise to functors to <code>$\mathbf{Grp}$</code>. In fact we&rsquo;re already familiar with a cogroup for this very reason. In the homotopy category of pointed topological spaces the <code>$n$</code>-sphere is a cogroup, and its Hom-functur is exactly the <code>$n$</code>th homotopy group. For <code>$n=1$</code>, the coproduct of the circle with itself is the figure eight, and the comultiplication is given by first going the first loop then the second.</p>
+<p>If you want to play a bit with this yourself you might try to figure out which (if any) cogroup gives rise to the following functors: The forgetful functor from <code>$\Mod R$</code> to <code>$\mathbf{Ab}$</code> sending a module to its underlying abelian group, the identity functor on <code>$\mathbf{Grp}$</code>, the inclusion of <code>$\mathbf{Ab}$</code> into <code>$\mathbf{Grp}$</code>.</p>
+<p>Now let&rsquo;s go back to why I was looking at this in the first place. As you may or may not know the category of affine schemes is equivalent to the opposite category to the category of rings (for the purposes of this blogpost I will define rings to be commutative). Further the product of affine schemes coincides with their product in the category of schemes, so if we can understand functors from <code>$\mathbf{Ring}$</code> to <code>$\mathbf{Grp}$</code> as cogroups in <code>$\mathbf{Ring}$</code> this means we can extend them to the category of schemes!</p>
+<p>Similar to the examples I listed above we have the functor giving the underlying additive group of a ring. This functor is given by a cogroup with object <code>$\Z[x]$</code>. The coproduct of <code>$\Z[x]$</code> with itself is <code>$\Z[x]\otimes \Z[x] = \Z[x,y]$</code>. The comultiplication maps <code>$x$</code> to <code>$x+y$</code>, the coinverse maps <code>$x$</code> to <code>$-x$</code>, and the counit maps <code>$x$</code> to <code>$0$</code>. It should make sense that this describes the additve group of a ring.</p>
+<p>Another important functor from rings to groups is the group of units. The idea is similar to that for the additive group but instead of using <code>$\Z[x]$</code> we use <code>$\Z[x^\pm] = \Z[x,y]/(xy-1)$</code>. Now we get a map from <code>$\Z[x^\pm]$</code> to <code>$R$</code> for every unit of <code>$R$</code> by mapping <code>$x$</code> to said unit. The comultiplication <code>$\Z[x^\pm] \to \Z[x^\pm, y^\pm]$</code> is given by <code>$x \mapsto xy$</code>, the coinverse by <code>$x \mapsto x^-$</code>, and the counit by <code>$x \mapsto 1$</code>.</p>
+<p>Before we try to apply this to some schemes let&rsquo;s first simplify a little. <code>$\Z$</code> is way too complicated, so let us instead look at schemes over an algebraically closed field <code>$k$</code>. What this means is that in the definition of schemes every time the word ring appears we simply replace it with <code>$k$</code>-algebra instead. More formally what we do is take the \textit{over category} of schemes over <code>$\Spec k$</code>, but however you want to think about it this means that <code>$\Z$</code> is replaced by <code>$k$</code> and we don&rsquo;t have to think about prime numbers or anything difficult like that.</p>
+<p>Okay, onto the schemes. The only non-affine schemes I know anything about are projective spaces, so let&rsquo;s look at the projective line <code>$\mathbb{P}^1_k$</code>. The projective line is usually described with homogeneous coordinates <code>$(x:y)$</code>, where <code>$(x:y) = (\lambda x: \lambda y)$</code> for any <code>$\lambda \in k^\times$</code>, and <code>$x$</code> and <code>$y$</code> are not both 0. The homogeneous coordinates describe the closed points of <code>$\mathbb{P}^1_k$</code> and we also have a generic point. The regular functions of <code>$\mathbb{P}^1_k$</code> should come from regular functions on the affine plane that take the same value on <code>$(x, y)$</code> as <code>$(\lambda x, \lambda y)$</code>. If we restrict to coordinates of the form <code>$(1:y)$</code> we get polynomials of the form <code>$k[\frac{y}{x}]$</code> which is just an affine line. Similarly if we look at coordinates of the form <code>$(x:1)$</code> we get polynomials in  <code>$k[\frac{x}{y}]$</code>. The intersection of these are perhaps not surprisingly <code>$k[\frac{x}{y}, \frac{y}{x}]$</code>. Since this covers all the homogeneous coordinates we have described <code>$\mathbb{P}^1_k$</code> as a pushout of affine schemes.</p>
+<p><img src="/cogroups/projective-line-pushout.png" alt="daf"></p>
+<p>This means we can understand morphisms <code>$\mathbb{P}^1_k \to \Spec R$</code> simply by looking at morphisms of affine schemes, and morphisms of affine schemes are just morphisms of <code>$k$</code>-algebras in the opposite direction (remember we&rsquo;re thinking of schemes over <code>$k$</code>). So what&rsquo;s the multiplicative group of the projective line? It&rsquo;s pairs of <code>$k$</code>-algebra maps <code>$k[x^\pm] \to k[\frac{x}{y}]$</code> and <code>$k[x^\pm] \to k[\frac{y}{x}]$</code> that coincides on <code>$k[\frac{x}{y}, \frac{y}{x}]$</code>. It should be clear that any such map sends <code>$x$</code> to a unit in <code>$k$</code> and it must be the same for both maps, so the unit group of <code>$\mathbb{P}^1_k$</code> is isomorphic to <code>$k^\times$</code>.</p>
+<p>Similarly for the additive group we just look at maps <code>$k[x] \to k[\frac{x}{y}]$</code> and <code>$k[x] \to k[\frac{y}{x}]$</code>. We see that for these to coincide on <code>$k[\frac{x}{y}, \frac{y}{x}]$</code> we need to map <code>$x$</code> to an element of <code>$k$</code>, so the additive group of <code>$\mathbb{P}^1_k$</code> is just the additive group of <code>$k$</code>.</p>
+<p>Those where my ramblings, maybe I&rsquo;ll make a post in the future if I learn about any other schemes with interesting multiplicative/additive groups or if I find any other interesting groups of schemes.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/algerbaic-geometry" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Algerbaic Geometry</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/category-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Category theory</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/cogroups" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cogroups</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/geometry-of-polynomial-rings/">The Geometry of Polynomial Rings</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/kan-extensions/">Kan extensions</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jagr2808.github.io" >
+    &copy;  Jacob's blog 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
