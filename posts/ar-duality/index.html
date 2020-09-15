@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>AR Duality | Jacob&#39;s blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.74.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="AR Duality" />
+<meta property="og:description" content="\( \require{AMScd} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Ext}{Ext} \DeclareMathOperator{\End}{End} \DeclareMathOperator{\proj}{proj} \def\L{\Lambda} \def\mod{\operatorname{mod}} \)
+In this blogpost I want to talk about the concept of AR duality. In short AR duality says that in suitably nice abelian categories we have natural isomorphisms $$\underline{\Hom}(\tau^- Y, X) \cong D\Ext^1(X, Y) \cong \overline{\Hom}(Y, \tau X)$$ Where $\underline{\Hom}$ is the stable homfunctor, $\overline{\Hom}$ is the costable homfunctor and $\tau$ is the Auslander-Reiten translate. In this blogpost I will define what these things mean and try to give an outline of the proof." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jagr2808.github.io/posts/ar-duality/" />
+<meta property="article:published_time" content="2020-09-14T12:00:04+02:00" />
+<meta property="article:modified_time" content="2020-09-14T12:00:04+02:00" />
+<meta itemprop="name" content="AR Duality">
+<meta itemprop="description" content="\( \require{AMScd} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Ext}{Ext} \DeclareMathOperator{\End}{End} \DeclareMathOperator{\proj}{proj} \def\L{\Lambda} \def\mod{\operatorname{mod}} \)
+In this blogpost I want to talk about the concept of AR duality. In short AR duality says that in suitably nice abelian categories we have natural isomorphisms $$\underline{\Hom}(\tau^- Y, X) \cong D\Ext^1(X, Y) \cong \overline{\Hom}(Y, \tau X)$$ Where $\underline{\Hom}$ is the stable homfunctor, $\overline{\Hom}$ is the costable homfunctor and $\tau$ is the Auslander-Reiten translate. In this blogpost I will define what these things mean and try to give an outline of the proof.">
+<meta itemprop="datePublished" content="2020-09-14T12:00:04+02:00" />
+<meta itemprop="dateModified" content="2020-09-14T12:00:04+02:00" />
+<meta itemprop="wordCount" content="1785">
+
+
+
+<meta itemprop="keywords" content="Representation Theory,AR Theory," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AR Duality"/>
+<meta name="twitter:description" content="\( \require{AMScd} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Ext}{Ext} \DeclareMathOperator{\End}{End} \DeclareMathOperator{\proj}{proj} \def\L{\Lambda} \def\mod{\operatorname{mod}} \)
+In this blogpost I want to talk about the concept of AR duality. In short AR duality says that in suitably nice abelian categories we have natural isomorphisms $$\underline{\Hom}(\tau^- Y, X) \cong D\Ext^1(X, Y) \cong \overline{\Hom}(Y, \tau X)$$ Where $\underline{\Hom}$ is the stable homfunctor, $\overline{\Hom}$ is the costable homfunctor and $\tau$ is the Auslander-Reiten translate. In this blogpost I will define what these things mean and try to give an outline of the proof."/>
+
+	<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Jacob&#39;s blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jagr2808.github.io/posts/ar-duality/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jagr2808.github.io/posts/ar-duality/&amp;text=AR%20Duality" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jagr2808.github.io/posts/ar-duality/&amp;title=AR%20Duality" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">AR Duality</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-09-14T12:00:04+02:00">September 14, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l"><p><code>\( \require{AMScd} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Ext}{Ext} \DeclareMathOperator{\End}{End} \DeclareMathOperator{\proj}{proj} \def\L{\Lambda} \def\mod{\operatorname{mod}} \)</code></p>
+<p>In this blogpost I want to talk about the concept of AR duality. In short AR duality says that in suitably nice abelian categories we have natural isomorphisms
+$$\underline{\Hom}(\tau^- Y, X) \cong D\Ext^1(X, Y) \cong \overline{\Hom}(Y, \tau X)$$
+Where <code>$\underline{\Hom}$</code> is the stable homfunctor, <code>$\overline{\Hom}$</code> is the costable homfunctor and <code>$\tau$</code> is the Auslander-Reiten translate. In this blogpost I will define what these things mean and try to give an outline of the proof.</p>
+<h1 id="preliminaries-and-notation">Preliminaries and notation</h1>
+<p>Throughout this blogpost <code>$k$</code> will be a field and <code>$\Lambda$</code> a finite dimensional algebra over <code>$k$</code>. We write <code>$\mod \Lambda$</code> to refer to the category of finitely generated <code>$\Lambda$</code>-modules, and <code>$\mod \Lambda^{op}$</code> the category of finitely generated right <code>$\Lambda$</code>-modules (or equivalently left <code>$\Lambda^{op}$</code>-modules). We will denote by <code>$S_i$</code> for <code>$i=1, \cdots, n$</code> the simple <code>$\Lambda$</code>-modules, and <code>$P_i$</code> and <code>$I_i$</code> for the projective cover and injective envelope of <code>$S_i$</code>. Similarly <code>$S_i'$</code>, <code>$P_i'$</code> and <code>$I_i'$</code> refer to the simple <code>$\Lambda^{op}$</code>-modules and their projective covers and injective envelopes.</p>
+<p>We think of the elements of <code>$\Ext^1_\L(X, Y)$</code> as Yoneda extensions, i.e. an element <code>$\eta \in \Ext^1_\L(X, Y)$</code> corresponds to a sequence</p>
+<p><code>$$\begin{CD} \eta: \; @. 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E_\eta @&gt;&gt;&gt; X @&gt;&gt;&gt; 0 \end{CD}$$</code></p>
+<p>up to isomorphism. If <code>$f: Y \to Y'$</code> and <code>$g: X' \to X$</code> are morphisms then <code>$f\eta$</code> adn <code>$\eta g$</code> are the unique extensions fitting into the commutative diagram</p>
+<p><code>$$\begin{CD} \eta g: \; @. 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E_{\eta g} @&gt;&gt;&gt; X' @&gt;&gt;&gt; 0\\ @. @VVV @| @VVV @VVgV @VVV\\ \eta: \; @. 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E_\eta @&gt;&gt;&gt; X @&gt;&gt;&gt; 0\\ @. @VVV @VVfV @VVV @| @VVV\\ f\eta: \; @. 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E_{f\eta} @&gt;&gt;&gt; X @&gt;&gt;&gt; 0.\\ \end{CD}$$</code></p>
+<p>This construction is bifunctorial so <code>$(f\eta)g = f(\eta g)$</code>, and it respects composition. Another thing to note is that <code>$E_{\eta g}$</code> is pullback and <code>$E_{f\eta}$</code> is pushout.</p>
+<h1 id="ar-translate">AR translate</h1>
+<p>When working with <code>$\L$</code>-modules we have two important dualities. <code>$(-)^* = \Hom_\Lambda(-, \Lambda):\proj \Lambda \to \proj \Lambda^{op}$</code> which maps projective left <code>$\Lambda$</code>-modules to projective right <code>$\Lambda$</code>-modules. And <code>$D = \Hom_k(-,k): \mod \Lambda \to \mod \Lambda^{op}$</code> mapping left modules to right modules. The important thing to note about these dualities is that if we define <code>$S_i'$</code> as <code>$DS_i$</code> then <code>$P_i^* =  P_i'$</code> and <code>$DP_i = I_i'$</code>. We can use these dualities to define the Auslander Reiten translate.</p>
+<p><strong>Definition (AR translate)</strong>: Let <code>$M$</code> be a <code>$\L$</code>-module and <code>$P_1^M \to P_0^M \to M$</code> the minimal projective presentation of <code>$M$</code>. Applying our first duality we get a map <code>${P_0^M}^* \to {P_1^M}^*$</code>. Applying the second duality we get a map <code>$D{P_1^M}^* \to D{P_0^M}^*$</code>. The AR translate <code>$\tau M$</code> is defined to be the kernel of this map.</p>
+<p>What we&rsquo;re essentially doing is replacing the projective modules in the presentation of <code>$M$</code> by the corresponding injective modules, and then taking the kernel instead of the cokernel. For example if we let <code>$\L$</code> be the path algebra <code>$k\left[ 1 \to 2 \to 3 \right]$</code>, then the minimal projective presentation of <code>$S_1$</code> is <code>$P_2 \to P_1$</code>. Applying the two dualities we get <code>$I_2 \to I_1$</code> which has kernel <code>$S_2$</code>. Hence the AR translate of <code>$S_1$</code> is <code>$\tau S_1=S_2$</code>.</p>
+<p>for any projective module <code>$P$</code>, it&rsquo;s minimal presentation is simply <code>$0 \to P$</code>, thus <code>$\tau P = 0$</code>. But if we &lsquo;&lsquo;ignore&rsquo;&rsquo; the projectives then <code>$\tau$</code> is an equivalence! More explicitly <code>$\tau: \underline{\mod}\L \to \overline{\mod}\L$</code> is an equivalence between the stable and costable module category. The stable module category is the one we get if we replace every projective module with the 0-module. For this to make sense we also have to replace any morphism factoring through a projective with the 0-morphism, since any map that factors through 0 is 0. The costable category is exactly the same, but for injective objects instead.</p>
+<h1 id="almost-split-sequences">Almost split sequences</h1>
+<p>An important reason to care about the AR translate is almost split sequences. A morphism is right almost split if it&rsquo;s <em>almost</em> split epi. To be more precise a morphism is right almost split if it is not split epi, and any map that isn&rsquo;t split epi factors through it. This definition makes sense since for a split epimorphism, any map factors through it. So a right almost split map is as close to being split epi as it could be without actually being. Dually we define a left almost split map as a map that is almost split mono.</p>
+<p>For any indecomposable <code>$\L$</code>-module <code>$M$</code> there is a unique right almost split map ending in <code>$M$</code>, and the kernel of this map is <code>$\tau M$</code> (In a more general abelian category this might be how you define <code>$\tau$</code>). Further if <code>$M$</code> is not projective this map is epi, and the kernel map is left almost split. So we have short exact sequence</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; \tau M @&gt;&gt;&gt; E @&gt;&gt;&gt; M @&gt;&gt;&gt; 0 \end{CD}$$</code></p>
+<p>which we call the almost split sequence of <code>$M$</code>, and will denote by <code>$\alpha_M$</code>. Further for any non-split sequence <code>$\eta \in \Ext^1_\L(X, \tau M)$</code> there is a map <code>$f:M \to X$</code> such that <code>$\eta f$</code> is the almost split sequence. To see this let <code>$\eta$</code> be the sequence</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; \tau M @&gt;&gt;&gt; F @&gt;&gt;&gt; X @&gt;&gt;&gt; 0. \end{CD}$$</code></p>
+<p>Since <code>$\tau M \to F$</code> isn&rsquo;t split and <code>$\tau M \to E$</code> is almost split, there is a map <code>$E \to F$</code> making the following diagram commute</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; \tau M @&gt;&gt;&gt; E @&gt;&gt;&gt; M @&gt;&gt;&gt; 0\\ @VVV @| @VVV @. @VVV \\ 0 @&gt;&gt;&gt; \tau M @&gt;&gt;&gt; F @&gt;&gt;&gt; X @&gt;&gt;&gt; 0. \end{CD}$$</code></p>
+<p>If we let <code>$f:M \to X$</code> be the induced map of cokernels we get that <code>$\eta f$</code> is our split exact sequence. A similar argument can also be made for non-split sequences in <code>$\Ext^1_\L(M, X)$</code>.</p>
+<h1 id="the-main-theorem">The main theorem</h1>
+<p>We want to prove that <code>$D\Ext_\L^1(X, Y)$</code> is naturally isomorphic to <code>$\underline{\Hom}(\tau^- Y, X)$</code> in <code>$X$</code> and <code>$Y$</code>. Since these are both additive functors, it is enough to restrict to the case when <code>$X$</code> and <code>$Y$</code> are indecomposable. We do this by constructing a perfect pairing between <code>$\Ext_\L^1(X, Y)$</code> and <code>$\underline{\Hom}(\tau^- Y, X)$</code>. A perfect pairing is a bilinear map <code>$\langle -,- \rangle: \Ext_\L^1(X, Y) \times \underline{\Hom}(\tau^- Y, X) \to k$</code> such that for any non-zero element <code>$\eta \in \Ext_\L^1(X, Y)$</code> there is an <code>$f \in  \underline{\Hom}(\tau^- Y, X)$</code> such that <code>$\langle \eta, f \rangle \neq 0$</code>, and conversely for every non-zero <code>$f$</code> there is an <code>$\eta$</code>. A perfect pairing would induce an isomorphism <code>$\underline{\Hom}(\tau^- Y, X) \cong D\Ext_\L^1(X, Y)$</code> by mapping <code>$f$</code> to <code>$\langle - , f \rangle$</code>, which is what we want.</p>
+<p>Since <code>$\alpha_{\tau^-Y} \in \Ext_\L^1(\tau^- Y, Y)$</code> is non-zero there is a functional <code>$\mu \in D\Ext_\L^1(\tau^- Y, Y) = \Hom_k(\Ext_\L^1(\tau^- Y, Y), k)$</code> such that <code>$\mu(\alpha_{\tau^-Y}) \neq 0$</code>. We can then define our pairing as <code>$\langle \eta, f \rangle = \mu(\eta f)$</code>. First we want to check that this pairing is well defined. Let <code>$f$</code> be a map that factors through a projective, and thus is 0 in <code>$\underline{\Hom}(\tau^- Y, X)$</code>.</p>
+<p><img src="/AR-duality/factor-through-projective.png" alt="Morphism factoring through projective"></p>
+<p>Since <code>$P$</code> is projective we can lift the map <code>$E_\eta \to X$</code> to <code>$P$</code>, and then by composing we get that <code>$f$</code> factors through <code>$E_\eta \to X$</code>. This means we have a commutative square:</p>
+<p><code>$$\begin{CD} \tau^-Y @= \tau^-Y\\ @VVV @VVV\\ E_\eta @&gt;&gt;&gt; X \end{CD}$$</code></p>
+<p>Then by the pullback property we get that the identity on <code>$\tau^- Y$</code> factors trough <code>$E_\eta \prod\limits_X \tau^- Y \to \tau^- Y$</code>. So <code>$\eta f$</code> is split and thus 0 in <code>$\Ext_\L^1(\tau^- Y, Y)$</code>.</p>
+<p>Next we want to check that for any nonzero <code>$\eta \in \Ext_\L^1(X, Y)$</code> there is an <code>$f \in \underline{\Hom}(\tau^- Y, X)$</code> such that <code>$\langle \eta, f\rangle \neq 0$</code>. Let <code>$\eta$</code> be</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E_\eta @&gt;&gt;&gt; X @&gt;&gt;&gt; 0 \end{CD}$$</code></p>
+<p>and let</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E @&gt;&gt;&gt; \tau^-Y @&gt;&gt;&gt; 0 \end{CD}$$</code></p>
+<p>be the almost split sequence <code>$\alpha_{\tau^-Y}$</code>. Then since <code>$Y \to E_\eta$</code> isn&rsquo;t split it factors through the almost split map <code>$Y \to E$</code>. Taking cokernels we get the diagram</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E @&gt;&gt;&gt; \tau^-Y @&gt;&gt;&gt; 0\\ @VVV @VVV @VVV @VVV @VVV\\ 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E_\eta @&gt;&gt;&gt; X @&gt;&gt;&gt; 0 \end{CD}$$</code></p>
+<p>Thus there is a map <code>$f:\tau^-Y \to X$</code> such that <code>$\eta f = \alpha_{\tau^-Y}$</code>, and we have that <code>$\langle \eta, f \rangle = \mu(\eta f) = \mu(\alpha_{\tau^-Y}) \neq 0$</code>.</p>
+<p>For the other direction assume <code>$f:\tau^-Y \to X$</code> is a map that does not factor through any projective. Let <code>$P \to X$</code> be an epimorphism from a projective to <code>$X$</code>, and let <code>$K$</code> be its kernel. If we take the pullback with <code>$f$</code> we get an extension of <code>$\tau^-Y$</code> and <code>$K$</code></p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; K @&gt;&gt;&gt; P @&gt;&gt;&gt; X @&gt;&gt;&gt; 0\\ @AAA @| @AAA @AAfA @AAA\\ 0 @&gt;&gt;&gt; K @&gt;&gt;&gt; E_X @&gt;&gt;&gt; \tau^-Y @&gt;&gt;&gt; 0 \end{CD}$$</code></p>
+<p>This extension cannot be split because if it was <code>$f$</code> would factor though <code>$P$</code>, and since we assumed <code>$f$</code> doesn&rsquo;t factor through a projective this is impossible. So the extensions isn&rsquo;t split in particular the map <code>$E_X \to \tau^-Y$</code> is not split epi. This means that it factors through the almost split sequence. Thus there is a map <code>$g:K\to Y$</code> giving us the folowing diagram</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; K @&gt;&gt;&gt; P @&gt;&gt;&gt; X @&gt;&gt;&gt; 0\\ @AAA @| @AAA @AAfA @AAA\\ 0 @&gt;&gt;&gt; K @&gt;&gt;&gt; E_X @&gt;&gt;&gt; \tau^-Y @&gt;&gt;&gt; 0\\ @VVV @VVgV @VVV @| @VVV\\ 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E @&gt;&gt;&gt; \tau^-Y @&gt;&gt;&gt; 0\\ \end{CD}$$</code></p>
+<p>Interchanging the order of when we do pushout and pullback we get a diagram like</p>
+<p><code>$$\begin{CD} 0 @&gt;&gt;&gt; K @&gt;&gt;&gt; P @&gt;&gt;&gt; X @&gt;&gt;&gt; 0\\ @VVV @VVgV @VVV @| @VVV\\ 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; Y \coprod\limits_K P @&gt;&gt;&gt; X @&gt;&gt;&gt; 0\\ @AAA @| @AAA @AAfA @AAA\\ 0 @&gt;&gt;&gt; Y @&gt;&gt;&gt; E @&gt;&gt;&gt; \tau^-Y @&gt;&gt;&gt; 0\\ \end{CD}$$</code></p>
+<p>Calling the middle sequence <code>$\eta$</code> we get that <code>$\eta f = \alpha_{\tau^-Y}$</code> and thus <code>$\langle \eta, f \rangle \neq 0$</code>.</p>
+<p>This shows that we have a perfect pairing <code>$\langle -,- \rangle: \Ext_\L^1(X, Y) \times \underline{\Hom}(\tau^- Y, X) \to k$</code> which gives us an isomorphism <code>$\underline{\Hom}(\tau^- Y, X) \cong D\Ext_\L^1(X, Y)$</code>. It&rsquo;s pretty straight forward to see that this isomorphism is functorial in <code>$X$</code>. To get something functorial in <code>$Y$</code> aswell we just have to choose our functionals <code>$\mu \in D\Ext_\L^1(\tau^- Y, Y)$</code> in a compatible way. This can be done, but I will not dwell on the details here.</p>
+<p>The AR duality gives a nice way to compute <code>$\Ext^1$</code>. Especially in the case when <code>$\L$</code> is hereditary, becuase then <code>$\underline{\Hom}(Y, X) = \Hom(Y, X)$</code> whenever <code>$Y$</code> has no projective summands. This is the basis for something called <code>$\tau$</code>-tilting theory, which is a generalization of tilting theory where we replace the condition <code>$\Ext^1(T, T) = 0$</code> with <code>$\Hom(T, \tau T) = 0$</code>. That&rsquo;s all I had to say for now.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/representation-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Representation Theory</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ar-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AR Theory</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jagr2808.github.io" >
+    &copy;  Jacob's blog 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
