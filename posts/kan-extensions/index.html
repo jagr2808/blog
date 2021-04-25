@@ -28,7 +28,6 @@
     
     <meta property="og:title" content="Kan extensions" />
 <meta property="og:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
-Test
 Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jagr2808.github.io/posts/kan-extensions/" />
@@ -36,11 +35,10 @@ Recently I learned about Kan extension which is a generalization of (co)limits i
 <meta property="article:modified_time" content="2020-05-30T21:09:44+02:00" />
 <meta itemprop="name" content="Kan extensions">
 <meta itemprop="description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
-Test
 Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram.">
 <meta itemprop="datePublished" content="2020-05-30T21:09:44+02:00" />
 <meta itemprop="dateModified" content="2020-05-30T21:09:44+02:00" />
-<meta itemprop="wordCount" content="1058">
+<meta itemprop="wordCount" content="1057">
 
 
 
@@ -48,7 +46,6 @@ Recently I learned about Kan extension which is a generalization of (co)limits i
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kan extensions"/>
 <meta name="twitter:description" content="\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
-Test
 Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram."/>
 
 	<script type="text/javascript"
@@ -185,7 +182,6 @@ MathJax.Hub.Config({
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l"><p><code>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)</code></p>
-<p>Test</p>
 <p>Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram. The word &ldquo;extension&rdquo; in Kan extension comes from what happens if the diagram we use to capture the information is bigger than the original diagram; we are extending the diagram. I will try to make this very loose explanation more rigorous in this post, so let&rsquo;s begin.</p>
 <p><strong>Definition (diagram)</strong>: If <code>$A$</code> is a small category and <code>$\mathcal{C}$</code> is a (not necessarily small) category, then a diagram in <code>$\mathcal{C}$</code> in the shape of <code>$A$</code> is a functor <code>$X: A \to \mathcal{C}$</code>.</p>
 <p>For example if <code>$A = 2$</code> is the discrete category with two objects then a diagram of shape <code>$A$</code> is just a pair of objects in <code>$\mathcal{C}$</code>. Or if <code>$A = A_L \leftarrow A_0 \rightarrow A_R$</code> an <code>$A$</code>-shaped diagram is three objects in <code>$\mathcal{C}$</code> together with two morphisms between the appropriate objects.</p>
