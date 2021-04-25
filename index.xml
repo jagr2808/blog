@@ -49,6 +49,7 @@ The spectrum of a ring $R$, denoted $\Spec R$, is the set of all prime ideals of
       
       <guid>https://jagr2808.github.io/posts/kan-extensions/</guid>
       <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
+Test
 Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram.</description>
     </item>
     
