@@ -53,6 +53,7 @@ Recently I learned about Kan extension which is a generalization of (co)limits i
 </script>
 
 
+
   </head>
 
   <body class="ma0 avenir bg-near-white">
@@ -182,13 +183,13 @@ MathJax.Hub.Config({
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l"><p><code>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)</code></p>
 <p>Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram. The word &ldquo;extension&rdquo; in Kan extension comes from what happens if the diagram we use to capture the information is bigger than the original diagram; we are extending the diagram. I will try to make this very loose explanation more rigorous in this post, so let&rsquo;s begin.</p>
-<p><strong>Definition (diagram)</strong>: If <code>$A$</code> is a small category and <code>$\mathcal{C}$</code> is a (not necessarily small) category, then a diagram in <code>$\mathcal{C}$</code> in the shape of <code>$A$</code> is a functor `$X: A \to \mathcal{C}$.</p>
+<p><strong>Definition (diagram)</strong>: If <code>$A$</code> is a small category and <code>$\mathcal{C}$</code> is a (not necessarily small) category, then a diagram in <code>$\mathcal{C}$</code> in the shape of <code>$A$</code> is a functor <code>$X: A \to \mathcal{C}$</code>.</p>
 <p>For example if <code>$A = 2$</code> is the discrete category with two objects then a diagram of shape <code>$A$</code> is just a pair of objects in <code>$\mathcal{C}$</code>. Or if <code>$A = A_L \leftarrow A_0 \rightarrow A_R$</code> an <code>$A$</code>-shaped diagram is three objects in <code>$\mathcal{C}$</code> together with two morphisms between the appropriate objects.</p>
 <p>Both the (co)limit and a Kan extension are universal constructions. A universal construction is done by looking at all the &ldquo;candidates&rdquo; that encapsulates the information we wish to capture. Then the universal construction is the candidate that can capture the information of all the other candidates. Let&rsquo;s have a quick refresher of what this candidate is in the (co)limit case.</p>
 <p><strong>Definition ((co)cone)</strong>: For an object <code>$C \in \mathcal{C}$</code> we have a functor <code>$\Delta(C): A \to \mathcal{C}$</code> that maps every object of <code>$A$</code> to <code>$C$</code> and every morphism of <code>$A$</code> to <code>$1_C$</code> the identity morphism on <code>$C$</code>. A cone of a diagram <code>$X:A \to \mathcal{C}$</code> is a natural transformation <code>$\eta : \Delta(C) \Rightarrow X$</code>. Similarly a cocone is a natural transformation <code>$\varepsilon: X \Rightarrow \Delta(C)$</code>.</p>
 <p>The (co)cone is so named because of how it looks when you draw it</p>
 <p><img src="/kan/cone.png" alt="A cone of X"></p>
-<p>So the limit is the cone that capture the information of all other cones. More specifically for every cone <code>$\eta: \Delta(C) \to X$</code> there is a unique morphism <code>$C \to \lim X$</code>, and vice versa. So the cones of <code>$X$</code> are in correspondence with the morphisms to <code>$\lim X$</code>. It is in this way that the limit encapsulates all other cones. Similarly the cocones are in correspondence with all the morphisms from the colimit`.</p>
+<p>So the limit is the cone that capture the information of all other cones. More specifically for every cone <code>$\eta: \Delta(C) \to X$</code> there is a unique morphism <code>$C \to \lim X$</code>, and vice versa. So the cones of <code>$X$</code> are in correspondence with the morphisms to <code>$\lim X$</code>. It is in this way that the limit encapsulates all other cones. Similarly the cocones are in correspondence with all the morphisms from the colimit.</p>
 <p>Like I said before a Kan extension is really the same idea, but instead of looking at a single object we look at another diagram. How would we do this you might ask? The thing to realize is that a single object IS another diagram, just in a very specific shape. It is in the shape of 1, the discrete category with one object. A functor from 1 just picks out a single object and a natural transformation between to such diagrams is just a morphism between their objects. Further the functor <code>$\Delta: \mathcal{C} \to \mathcal{C}^A$</code> is really just precomposition with the unique functor <code>$\pi_A: A \to 1$</code>. So a cone is really a functor <code>$C:1 \to \mathcal{C}$</code> together with a natural transformation <code>$\eta: \pi_A^* C \Rightarrow X$</code>.</p>
 <p><img src="/kan/cone-as-kan.png" alt="A cone as a natural transformation"></p>
 <p>with this picture in mind we can define Kan extensions.</p>
@@ -233,7 +234,7 @@ MathJax.Hub.Config({
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jagr2808.github.io" >
-    &copy;  Jacob's blog 2020 
+    &copy;  Jacob's blog 2021 
   </a>
     <div>
 
