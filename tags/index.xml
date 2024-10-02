@@ -2,84 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jacob&#39;s blog</title>
-    <link>https://jagr2808.github.io/tags/</link>
+    <link>https://jagr2808.github.io/blog/tags/</link>
     <description>Recent content in Tags on Jacob&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Sep 2020 12:00:04 +0200</lastBuildDate>
     
-	<atom:link href="https://jagr2808.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jagr2808.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AR Theory</title>
-      <link>https://jagr2808.github.io/tags/ar-theory/</link>
+      <link>https://jagr2808.github.io/blog/tags/ar-theory/</link>
       <pubDate>Mon, 14 Sep 2020 12:00:04 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/ar-theory/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/ar-theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Representation Theory</title>
-      <link>https://jagr2808.github.io/tags/representation-theory/</link>
+      <link>https://jagr2808.github.io/blog/tags/representation-theory/</link>
       <pubDate>Mon, 14 Sep 2020 12:00:04 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/representation-theory/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/representation-theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Algerbaic Geometry</title>
-      <link>https://jagr2808.github.io/tags/algerbaic-geometry/</link>
+      <link>https://jagr2808.github.io/blog/tags/algerbaic-geometry/</link>
       <pubDate>Sat, 01 Aug 2020 11:08:13 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/algerbaic-geometry/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/algerbaic-geometry/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Category theory</title>
-      <link>https://jagr2808.github.io/tags/category-theory/</link>
+      <link>https://jagr2808.github.io/blog/tags/category-theory/</link>
       <pubDate>Sat, 01 Aug 2020 11:08:13 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/category-theory/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/category-theory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cogroups</title>
-      <link>https://jagr2808.github.io/tags/cogroups/</link>
+      <link>https://jagr2808.github.io/blog/tags/cogroups/</link>
       <pubDate>Sat, 01 Aug 2020 11:08:13 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/cogroups/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/cogroups/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Polynomial rings</title>
-      <link>https://jagr2808.github.io/tags/polynomial-rings/</link>
+      <link>https://jagr2808.github.io/blog/tags/polynomial-rings/</link>
       <pubDate>Tue, 14 Jul 2020 10:19:23 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/polynomial-rings/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/polynomial-rings/</guid>
       <description></description>
     </item>
     
     <item>
       <title>(co)limit</title>
-      <link>https://jagr2808.github.io/tags/colimit/</link>
+      <link>https://jagr2808.github.io/blog/tags/colimit/</link>
       <pubDate>Sat, 30 May 2020 21:09:44 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/colimit/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/colimit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kan extensions</title>
-      <link>https://jagr2808.github.io/tags/kan-extensions/</link>
+      <link>https://jagr2808.github.io/blog/tags/kan-extensions/</link>
       <pubDate>Sat, 30 May 2020 21:09:44 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/tags/kan-extensions/</guid>
+      <guid>https://jagr2808.github.io/blog/tags/kan-extensions/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AR Theory on Jacob&#39;s blog</title>
-    <link>https://jagr2808.github.io/tags/ar-theory/</link>
+    <link>https://jagr2808.github.io/blog/tags/ar-theory/</link>
     <description>Recent content in AR Theory on Jacob&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 14 Sep 2020 12:00:04 +0200</lastBuildDate>
     
-	<atom:link href="https://jagr2808.github.io/tags/ar-theory/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jagr2808.github.io/blog/tags/ar-theory/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AR Duality</title>
-      <link>https://jagr2808.github.io/posts/ar-duality/</link>
+      <link>https://jagr2808.github.io/blog/posts/ar-duality/</link>
       <pubDate>Mon, 14 Sep 2020 12:00:04 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/posts/ar-duality/</guid>
+      <guid>https://jagr2808.github.io/blog/posts/ar-duality/</guid>
       <description>\( \require{AMScd} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Ext}{Ext} \DeclareMathOperator{\End}{End} \DeclareMathOperator{\proj}{proj} \def\L{\Lambda} \def\mod{\operatorname{mod}} \)
 In this blogpost I want to talk about the concept of AR duality. In short AR duality says that in suitably nice abelian categories we have natural isomorphisms $$\underline{\Hom}(\tau^- Y, X) \cong D\Ext^1(X, Y) \cong \overline{\Hom}(Y, \tau X)$$ Where $\underline{\Hom}$ is the stable homfunctor, $\overline{\Hom}$ is the costable homfunctor and $\tau$ is the Auslander-Reiten translate. In this blogpost I will define what these things mean and try to give an outline of the proof.</description>
     </item>

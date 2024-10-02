@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kan extensions on Jacob&#39;s blog</title>
-    <link>https://jagr2808.github.io/tags/kan-extensions/</link>
+    <link>https://jagr2808.github.io/blog/tags/kan-extensions/</link>
     <description>Recent content in Kan extensions on Jacob&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 May 2020 21:09:44 +0200</lastBuildDate>
     
-	<atom:link href="https://jagr2808.github.io/tags/kan-extensions/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jagr2808.github.io/blog/tags/kan-extensions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kan extensions</title>
-      <link>https://jagr2808.github.io/posts/kan-extensions/</link>
+      <link>https://jagr2808.github.io/blog/posts/kan-extensions/</link>
       <pubDate>Sat, 30 May 2020 21:09:44 +0200</pubDate>
       
-      <guid>https://jagr2808.github.io/posts/kan-extensions/</guid>
+      <guid>https://jagr2808.github.io/blog/posts/kan-extensions/</guid>
       <description>\( \DeclareMathOperator{\Spec}{Spec} \DeclareMathOperator{\C}{\mathbb{C}} \DeclareMathOperator{\Z}{\mathbb{Z}} \DeclareMathOperator{\Hom}{Hom} \DeclareMathOperator{\Mod}{Mod} \)
 Recently I learned about Kan extension which is a generalization of (co)limits in category theory. So I thought it would be fun to write a little blog post introducing limits and Kan extensions. The idea of a (co)limit is to capture information about a diagram in just one object. The idea of Kan extensions is similar, but instead of trying to capture information in a single object we do it in some other diagram.</description>
     </item>
