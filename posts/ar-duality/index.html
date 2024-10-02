@@ -14,7 +14,7 @@
 
     
     
-      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+      <link href="/blog/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
     
 
     
@@ -66,7 +66,7 @@ In this blogpost I want to talk about the concept of AR duality. In short AR dua
     <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+    <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
       
         Jacob&#39;s blog
       
@@ -78,13 +78,13 @@ In this blogpost I want to talk about the concept of AR duality. In short AR dua
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+            <a class="hover-white no-underline white-90" href="/blog/about/" title="About page">
               About
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+            <a class="hover-white no-underline white-90" href="/blog/posts/" title="Posts page">
               Posts
             </a>
           </li>
@@ -209,7 +209,7 @@ Where <code>$\underline{\Hom}$</code> is the stable homfunctor, <code>$\overline
 <h1 id="the-main-theorem">The main theorem</h1>
 <p>We want to prove that <code>$D\Ext_\L^1(X, Y)$</code> is naturally isomorphic to <code>$\underline{\Hom}(\tau^- Y, X)$</code> in <code>$X$</code> and <code>$Y$</code>. Since these are both additive functors, it is enough to restrict to the case when <code>$X$</code> and <code>$Y$</code> are indecomposable. We do this by constructing a perfect pairing between <code>$\Ext_\L^1(X, Y)$</code> and <code>$\underline{\Hom}(\tau^- Y, X)$</code>. A perfect pairing is a bilinear map <code>$\langle -,- \rangle: \Ext_\L^1(X, Y) \times \underline{\Hom}(\tau^- Y, X) \to k$</code> such that for any non-zero element <code>$\eta \in \Ext_\L^1(X, Y)$</code> there is an <code>$f \in  \underline{\Hom}(\tau^- Y, X)$</code> such that <code>$\langle \eta, f \rangle \neq 0$</code>, and conversely for every non-zero <code>$f$</code> there is an <code>$\eta$</code>. A perfect pairing would induce an isomorphism <code>$\underline{\Hom}(\tau^- Y, X) \cong D\Ext_\L^1(X, Y)$</code> by mapping <code>$f$</code> to <code>$\langle - , f \rangle$</code>, which is what we want.</p>
 <p>Since <code>$\alpha_{\tau^-Y} \in \Ext_\L^1(\tau^- Y, Y)$</code> is non-zero there is a functional <code>$\mu \in D\Ext_\L^1(\tau^- Y, Y) = \Hom_k(\Ext_\L^1(\tau^- Y, Y), k)$</code> such that <code>$\mu(\alpha_{\tau^-Y}) \neq 0$</code>. We can then define our pairing as <code>$\langle \eta, f \rangle = \mu(\eta f)$</code>. First we want to check that this pairing is well defined. Let <code>$f$</code> be a map that factors through a projective, and thus is 0 in <code>$\underline{\Hom}(\tau^- Y, X)$</code>.</p>
-<p><img src="/AR-duality/factor-through-projective.png" alt="Morphism factoring through projective"></p>
+<p><img src="/blog/AR-duality/factor-through-projective.png" alt="Morphism factoring through projective"></p>
 <p>Since <code>$P$</code> is projective we can lift the map <code>$E_\eta \to X$</code> to <code>$P$</code>, and then by composing we get that <code>$f$</code> factors through <code>$E_\eta \to X$</code>. This means we have a commutative square:</p>
 <p><code>$$\begin{CD} \tau^-Y @= \tau^-Y\\ @VVV @VVV\\ E_\eta @&gt;&gt;&gt; X \end{CD}$$</code></p>
 <p>Then by the pullback property we get that the identity on <code>$\tau^- Y$</code> factors trough <code>$E_\eta \prod\limits_X \tau^- Y \to \tau^- Y$</code>. So <code>$\eta f$</code> is split and thus 0 in <code>$\Ext_\L^1(\tau^- Y, Y)$</code>.</p>
@@ -232,11 +232,11 @@ Where <code>$\underline{\Hom}$</code> is the stable homfunctor, <code>$\overline
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/representation-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Representation Theory</a>
+     <a href="/blog/tags/representation-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Representation Theory</a>
    </li>
   
    <li class="list">
-     <a href="/tags/ar-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AR Theory</a>
+     <a href="/blog/tags/ar-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AR Theory</a>
    </li>
   
 </ul>
@@ -284,7 +284,7 @@ Where <code>$\underline{\Hom}$</code> is the stable homfunctor, <code>$\overline
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/blog/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

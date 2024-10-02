@@ -14,7 +14,7 @@
 
     
     
-      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+      <link href="/blog/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
     
 
     
@@ -66,7 +66,7 @@ Recently I learned about Kan extension which is a generalization of (co)limits i
     <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+    <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
       
         Jacob&#39;s blog
       
@@ -78,13 +78,13 @@ Recently I learned about Kan extension which is a generalization of (co)limits i
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+            <a class="hover-white no-underline white-90" href="/blog/about/" title="About page">
               About
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+            <a class="hover-white no-underline white-90" href="/blog/posts/" title="Posts page">
               Posts
             </a>
           </li>
@@ -188,13 +188,13 @@ MathJax.Hub.Config({
 <p>Both the (co)limit and a Kan extension are universal constructions. A universal construction is done by looking at all the &ldquo;candidates&rdquo; that encapsulates the information we wish to capture. Then the universal construction is the candidate that can capture the information of all the other candidates. Let&rsquo;s have a quick refresher of what this candidate is in the (co)limit case.</p>
 <p><strong>Definition ((co)cone)</strong>: For an object <code>$C \in \mathcal{C}$</code> we have a functor <code>$\Delta(C): A \to \mathcal{C}$</code> that maps every object of <code>$A$</code> to <code>$C$</code> and every morphism of <code>$A$</code> to <code>$1_C$</code> the identity morphism on <code>$C$</code>. A cone of a diagram <code>$X:A \to \mathcal{C}$</code> is a natural transformation <code>$\eta : \Delta(C) \Rightarrow X$</code>. Similarly a cocone is a natural transformation <code>$\varepsilon: X \Rightarrow \Delta(C)$</code>.</p>
 <p>The (co)cone is so named because of how it looks when you draw it</p>
-<p><img src="/kan/cone.png" alt="A cone of X"></p>
+<p><img src="/blog/kan/cone.png" alt="A cone of X"></p>
 <p>So the limit is the cone that capture the information of all other cones. More specifically for every cone <code>$\eta: \Delta(C) \to X$</code> there is a unique morphism <code>$C \to \lim X$</code>, and vice versa. So the cones of <code>$X$</code> are in correspondence with the morphisms to <code>$\lim X$</code>. It is in this way that the limit encapsulates all other cones. Similarly the cocones are in correspondence with all the morphisms from the colimit.</p>
 <p>Like I said before a Kan extension is really the same idea, but instead of looking at a single object we look at another diagram. How would we do this you might ask? The thing to realize is that a single object IS another diagram, just in a very specific shape. It is in the shape of 1, the discrete category with one object. A functor from 1 just picks out a single object and a natural transformation between to such diagrams is just a morphism between their objects. Further the functor <code>$\Delta: \mathcal{C} \to \mathcal{C}^A$</code> is really just precomposition with the unique functor <code>$\pi_A: A \to 1$</code>. So a cone is really a functor <code>$C:1 \to \mathcal{C}$</code> together with a natural transformation <code>$\eta: \pi_A^* C \Rightarrow X$</code>.</p>
-<p><img src="/kan/cone-as-kan.png" alt="A cone as a natural transformation"></p>
+<p><img src="/blog/kan/cone-as-kan.png" alt="A cone as a natural transformation"></p>
 <p>with this picture in mind we can define Kan extensions.</p>
 <p><strong>Definition (Kan extension)</strong>: Let <code>$A$</code> and <code>$B$</code> be small categories, <code>$\mathcal{C}$</code> a category, <code>$u: A \to B$</code> a functor, and <code>$X:A \to \mathcal{C}$</code> a diagram. The Right Kan extension of <code>$X$</code> along <code>$u$</code> is a functor <code>$RKan_u(X) : B \to \mathcal{C}$</code> together with a natural transformation <code>$\alpha: RKan_u(X) \circ u \Rightarrow X$</code>, such that for any other functor <code>$Y: B \to \mathcal{C}$</code> and natural transformation <code>$\eta: Y \circ u \Rightarrow X$</code> there is a unique natural transformation <code>$\hat{\eta} : Y \Rightarrow RKan_u(X)$</code> such that <code>$\alpha \cdot \hat{\eta} \circ u = \eta$</code>.</p>
-<p><img src="/kan/kan-extension.png" alt="Kan extension"></p>
+<p><img src="/blog/kan/kan-extension.png" alt="Kan extension"></p>
 <p>Another way to say this is that we have a natural isomorphism <code>$\Hom_{\mathcal{C}^B}(Y, RKan_u(X)) \cong \Hom_{\mathcal{C}^A}(u^*Y, X)$</code>, i.e. <code>$(u^*, RKan)$</code> is an adjoint pair. Dually the Left Kan extension is defined as the left adjoint of the precomposition functor <code>$u^*$</code>.</p>
 <p>Lastly let&rsquo;s look at an example. We can think of a group as a category with one object. That is if <code>$G$</code> is a group we make a category with one object <code>$*$</code>, and morphisms <code>$\Hom(*,*) = G$</code> such that composition is the group operation of <code>$G$</code>. Then a functor <code>$\varphi: H \to G$</code> corresponds exactly to a group map between the groups, a functor <code>$\rho: G \to \mathcal{C}$</code> is exactly a <code>$G$</code> action on an object of <code>$\mathcal{C}$</code>, and a natural transformation between such functors corresponds exactly to a <code>$G$</code>-linear map between <code>$G$</code>-objects.</p>
 <p>Example: Let <code>$G$</code> be a group (realized as a category), <code>$H$</code> a subgroup of <code>$G$</code>, <code>$\iota : H \to G$</code> the inclusion functor and <code>$X: H \to Ab$</code> an <code>$H$</code>-module. Then the Left Kan extension of <code>$X$</code> along <code>$\iota$</code> is the induced module <code>$\mathbb{Z}G \otimes_{\mathbb{Z}H} X$</code>, and the Right Kan extension is the coinduced module <code>$\Hom_{\mathbb{Z}H}(\mathbb{Z}G, X)$</code>. The natural transformations are given by <code>$x \mapsto 1 \otimes x$</code> and <code>$f \mapsto f(1)$</code> respectively.</p>
@@ -203,15 +203,15 @@ MathJax.Hub.Config({
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/colimit" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">(co)limit</a>
+     <a href="/blog/tags/colimit" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">(co)limit</a>
    </li>
   
    <li class="list">
-     <a href="/tags/category-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Category theory</a>
+     <a href="/blog/tags/category-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Category theory</a>
    </li>
   
    <li class="list">
-     <a href="/tags/kan-extensions" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Kan extensions</a>
+     <a href="/blog/tags/kan-extensions" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Kan extensions</a>
    </li>
   
 </ul>
@@ -259,7 +259,7 @@ MathJax.Hub.Config({
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/blog/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>

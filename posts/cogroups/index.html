@@ -14,7 +14,7 @@
 
     
     
-      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+      <link href="/blog/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
     
 
     
@@ -66,7 +66,7 @@ Introduction I was watching Richard E. Borchards lecture series on schemes where
     <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+    <a href="/blog/" class="f3 fw2 hover-white no-underline white-90 dib">
       
         Jacob&#39;s blog
       
@@ -78,13 +78,13 @@ Introduction I was watching Richard E. Borchards lecture series on schemes where
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+            <a class="hover-white no-underline white-90" href="/blog/about/" title="About page">
               About
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+            <a class="hover-white no-underline white-90" href="/blog/posts/" title="Posts page">
               Posts
             </a>
           </li>
@@ -185,7 +185,7 @@ MathJax.Hub.Config({
 <h1 id="introduction">Introduction</h1>
 <p>I was watching Richard E. Borchards <a href="https://www.youtube.com/playlist?list=PL8yHsr3EFj50Un2NpfPySgXctRQK7CLG-">lecture series on schemes</a> where he talked about groups in the category of schemes. Thinking about this I stumbled upon the idea of cogroups. I was already vaguely familiar with the idea of coalgebras, but I hadn&rsquo;t really looked at cogroups before (or so I thought). So this blogpost will just be my ramblings of what I found out.</p>
 <p>Let&rsquo;s start at the beginning: a group in a category can be defined as an object <code>$G$</code> together with maps <code>$\mu: G \times G \to G$</code>, <code>$-1:G \to G$</code> and <code>$e:1 \to G$</code> making the following diagrams commute.</p>
-<p><img src="/cogroups/group-axioms.png" alt="Diagram of group axioms"></p>
+<p><img src="/blog/cogroups/group-axioms.png" alt="Diagram of group axioms"></p>
 <p>Here <code>$\times$</code> is the categorical product and <code>$1$</code> is the terminal object, so we have to assume or category has these. The diagrams describe the associativity, inverse and identity axioms respectively. You can check that if we apply this to the category of sets we get the standard definition of a group. If we take the duals of these diagrams, inverting the arrows, replacing <code>$\times$</code> by coproduct and <code>$1$</code> by the initial object we get the cogroup axioms.</p>
 <p>Okay, so this is fun and all, but why care about cogroups? Well one reason might be the contravariant Yoneda embedding! Hang with me here. Let <code>$G$</code> be a cogroup in a category <code>$\mathcal{C}$</code>. If our Hom-functors preserve products and terminal objects (like they do in most the categories we know) then the Yoneda embedding makes <code>$\Hom(G, -)$</code> into a group in the functor category <code>$[\mathcal{C}, \mathbf{Set}]$</code>. This means that for any object <code>$X \in \mathcal{C}$</code> we have that <code>$\Hom(G, X)$</code> is a group in <code>$\mathbf{Set}$</code>. Further <code>$\Hom(G, -)$</code> lifts to a functor to the category of groups of sets, also known as <code>$\mathbf{Grp}$</code> the category of groups.</p>
 <p>So cogroups give rise to functors to <code>$\mathbf{Grp}$</code>. In fact we&rsquo;re already familiar with a cogroup for this very reason. In the homotopy category of pointed topological spaces the <code>$n$</code>-sphere is a cogroup, and its Hom-functur is exactly the <code>$n$</code>th homotopy group. For <code>$n=1$</code>, the coproduct of the circle with itself is the figure eight, and the comultiplication is given by first going the first loop then the second.</p>
@@ -195,22 +195,22 @@ MathJax.Hub.Config({
 <p>Another important functor from rings to groups is the group of units. The idea is similar to that for the additive group but instead of using <code>$\Z[x]$</code> we use <code>$\Z[x^\pm] = \Z[x,y]/(xy-1)$</code>. Now we get a map from <code>$\Z[x^\pm]$</code> to <code>$R$</code> for every unit of <code>$R$</code> by mapping <code>$x$</code> to said unit. The comultiplication <code>$\Z[x^\pm] \to \Z[x^\pm, y^\pm]$</code> is given by <code>$x \mapsto xy$</code>, the coinverse by <code>$x \mapsto x^-$</code>, and the counit by <code>$x \mapsto 1$</code>.</p>
 <p>Before we try to apply this to some schemes let&rsquo;s first simplify a little. <code>$\Z$</code> is way too complicated, so let us instead look at schemes over an algebraically closed field <code>$k$</code>. What this means is that in the definition of schemes every time the word ring appears we simply replace it with <code>$k$</code>-algebra instead. More formally what we do is take the \textit{over category} of schemes over <code>$\Spec k$</code>, but however you want to think about it this means that <code>$\Z$</code> is replaced by <code>$k$</code> and we don&rsquo;t have to think about prime numbers or anything difficult like that.</p>
 <p>Okay, onto the schemes. The only non-affine schemes I know anything about are projective spaces, so let&rsquo;s look at the projective line <code>$\mathbb{P}^1_k$</code>. The projective line is usually described with homogeneous coordinates <code>$(x:y)$</code>, where <code>$(x:y) = (\lambda x: \lambda y)$</code> for any <code>$\lambda \in k^\times$</code>, and <code>$x$</code> and <code>$y$</code> are not both 0. The homogeneous coordinates describe the closed points of <code>$\mathbb{P}^1_k$</code> and we also have a generic point. The regular functions of <code>$\mathbb{P}^1_k$</code> should come from regular functions on the affine plane that take the same value on <code>$(x, y)$</code> as <code>$(\lambda x, \lambda y)$</code>. If we restrict to coordinates of the form <code>$(1:y)$</code> we get polynomials of the form <code>$k[\frac{y}{x}]$</code> which is just an affine line. Similarly if we look at coordinates of the form <code>$(x:1)$</code> we get polynomials in  <code>$k[\frac{x}{y}]$</code>. The intersection of these are perhaps not surprisingly <code>$k[\frac{x}{y}, \frac{y}{x}]$</code>. Since this covers all the homogeneous coordinates we have described <code>$\mathbb{P}^1_k$</code> as a pushout of affine schemes.</p>
-<p><img src="/cogroups/projective-line-pushout.png" alt="daf"></p>
+<p><img src="/blog/cogroups/projective-line-pushout.png" alt="daf"></p>
 <p>This means we can understand morphisms <code>$\mathbb{P}^1_k \to \Spec R$</code> simply by looking at morphisms of affine schemes, and morphisms of affine schemes are just morphisms of <code>$k$</code>-algebras in the opposite direction (remember we&rsquo;re thinking of schemes over <code>$k$</code>). So what&rsquo;s the multiplicative group of the projective line? It&rsquo;s pairs of <code>$k$</code>-algebra maps <code>$k[x^\pm] \to k[\frac{x}{y}]$</code> and <code>$k[x^\pm] \to k[\frac{y}{x}]$</code> that coincides on <code>$k[\frac{x}{y}, \frac{y}{x}]$</code>. It should be clear that any such map sends <code>$x$</code> to a unit in <code>$k$</code> and it must be the same for both maps, so the unit group of <code>$\mathbb{P}^1_k$</code> is isomorphic to <code>$k^\times$</code>.</p>
 <p>Similarly for the additive group we just look at maps <code>$k[x] \to k[\frac{x}{y}]$</code> and <code>$k[x] \to k[\frac{y}{x}]$</code>. We see that for these to coincide on <code>$k[\frac{x}{y}, \frac{y}{x}]$</code> we need to map <code>$x$</code> to an element of <code>$k$</code>, so the additive group of <code>$\mathbb{P}^1_k$</code> is just the additive group of <code>$k$</code>.</p>
 <p>Those where my ramblings, maybe I&rsquo;ll make a post in the future if I learn about any other schemes with interesting multiplicative/additive groups or if I find any other interesting groups of schemes.</p>
 <ul class="pa0">
   
    <li class="list">
-     <a href="/tags/algerbaic-geometry" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Algerbaic Geometry</a>
+     <a href="/blog/tags/algerbaic-geometry" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Algerbaic Geometry</a>
    </li>
   
    <li class="list">
-     <a href="/tags/category-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Category theory</a>
+     <a href="/blog/tags/category-theory" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Category theory</a>
    </li>
   
    <li class="list">
-     <a href="/tags/cogroups" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cogroups</a>
+     <a href="/blog/tags/cogroups" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">cogroups</a>
    </li>
   
 </ul>
@@ -230,11 +230,11 @@ MathJax.Hub.Config({
     <ul class="pa0 list">
 	   
 	     <li  class="mb2">
-          <a href="/posts/geometry-of-polynomial-rings/">The Geometry of Polynomial Rings</a>
+          <a href="/blog/posts/geometry-of-polynomial-rings/">The Geometry of Polynomial Rings</a>
         </li>
 	    
 	     <li  class="mb2">
-          <a href="/posts/kan-extensions/">Kan extensions</a>
+          <a href="/blog/posts/kan-extensions/">Kan extensions</a>
         </li>
 	    
     </ul>
@@ -273,7 +273,7 @@ MathJax.Hub.Config({
 
     
 
-  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+  <script src="/blog/dist/js/app.3fc0f988d21662902933.js"></script>
 
 
   </body>
